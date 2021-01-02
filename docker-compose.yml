@@ -1,0 +1,10 @@
+postgresql:
+  image: postgres:9.6
+
+  ports:
+    - 5432:5432
+  environment:
+    - PGDATA=/postgresql
+    - POSTGRES_PASSWORD=worldtrippin-app
+  volumes:
+    - ./tmp/data/postgresql:/postgresql
