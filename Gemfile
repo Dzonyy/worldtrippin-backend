@@ -14,6 +14,14 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rack-cors'
 
+# Dry-rb
+gem 'dry-core'
+gem 'dry-initializer'
+gem 'dry-monads'
+gem 'dry-types'
+gem 'dry-struct'
+gem 'dry-validation'
+
 group :development, :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
