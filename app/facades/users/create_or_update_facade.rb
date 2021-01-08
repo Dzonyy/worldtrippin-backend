@@ -5,6 +5,7 @@ module Users
     option :params, optional: true, default: -> { {} }
 
     def operation
+      binding.pry
       @operation ||= Users::CreateOrUpdateOperation.new(
         user: user,
         form: form,
@@ -27,15 +28,7 @@ module Users
     private
 
     def form_data
-      @form_data ||= if params[:users].present?
-        HashData::Users::CreateOrUpdateFactory.call(form_data: permitted_params)
-      else
-        HashData::Users::CreateOrUpdateFactory.call(form_data: user.to_h)
-      end
-    end
-
-    def permitted_params
-      params.fetch(:user, {}).permit!.to_h.deep_symbolize_keys
+      @form_data = HashData::Users::CreateOrUpdateFactory.call(params: params)
     end
   end
 end

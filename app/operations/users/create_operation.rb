@@ -22,7 +22,7 @@ module Users
     end
 
     def user_params
-      @user_params ||= HashData::Users::HashFactory.call(form_data: form_data)
+      @user_params ||= HashData::Users::CreateOrUpdateFactory.call(params: form_data)
     end
   end
 end

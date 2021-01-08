@@ -12,22 +12,35 @@ module Api
       end
 
       def create
-        @facade = Users::CreateOrUpdateFacade.new(params: params)
+        @facade = Users::CreateOrUpdateFacade.new(params: user_params)
         result  = @facade.operation.call
 
         case result
         when Success
-          status 200
+          render json: { status: 402 }
 
         when Failure
-          status 422
+          render json: { status: 200 }
+        end
+      end
+
+      def update
+        @facade = Users::CreateOrUpdateFacade.new(params: user_params)
+        result  = @facade.operation.call
+
+        case result
+        when Success
+          render json: { status: 402  }
+
+        when Failure
+          render json: { status: 200 }
         end
       end
 
       private
 
       def user_params
-        params.fetch(:user, {}).permit(:email, :password_digest, :first_name, :last_name)
+        params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name)
       end
 
       def find_user
