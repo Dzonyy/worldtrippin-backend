@@ -22,6 +22,9 @@ gem 'dry-types'
 gem 'dry-struct'
 gem 'dry-validation'
 
+# Make classes callable
+gem 'callee'
+
 group :development, :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
