@@ -4,15 +4,15 @@ module Api
       include Dry::Monads[:result]
 
       def new
-        @facade = Users::CreateOrUpdateFacade.new
+        @facade = Users::CreateFacade.new
       end
 
       def edit
-        @facade = Users::CreateOrUpdateFacade.new(params: params)
+        @facade = Users::CreateOrUpdateFacade.new(params: user_params)
       end
 
       def create
-        @facade = Users::CreateOrUpdateFacade.new(params: user_params)
+        @facade = Users::CreateFacade.new(params: user_params)
         result  = @facade.operation.call
 
         case result

@@ -1,12 +1,11 @@
 module Users
-  class CreateOrUpdateFacade
+  class CreateFacade
     extend Dry::Initializer
 
     option :params, optional: true, default: -> { {} }
 
     def operation
-      binding.pry
-      @operation ||= Users::CreateOrUpdateOperation.new(
+      @operation ||= Users::CreateOperation.new(
         user: user,
         form: form,
         contract: contract
@@ -14,11 +13,11 @@ module Users
     end
 
     def form
-      @form ||= Users::CreateOrUpdateForm.new(form_data)
+      @form ||= Users::CreateForm.new(form_data)
     end
 
     def contract
-      @contract ||= Users::CreateOrUpdateContract.new
+      @contract ||= Users::CreateContract.new
     end
 
     def user
@@ -28,7 +27,7 @@ module Users
     private
 
     def form_data
-      @form_data = HashData::Users::CreateOrUpdateFactory.call(params: params)
+      @form_data = HashData::Users::CreateFactory.call(params: params)
     end
   end
 end

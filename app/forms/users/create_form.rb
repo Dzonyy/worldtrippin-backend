@@ -1,5 +1,5 @@
 module Users
-  class CreateOrUpdateForm < ApplicationForm
+  class CreateForm < ApplicationForm
     transform_keys(&:to_sym)
 
     attribute :email, Types::Coercible::String

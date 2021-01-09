@@ -1,6 +1,6 @@
 module HashData
   module Users
-    class CreateOrUpdateFactory
+    class CreateFactory
       include Callee
 
       option :params
