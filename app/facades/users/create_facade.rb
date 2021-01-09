@@ -21,7 +21,7 @@ module Users
     end
 
     def user
-      @user ||= User.find_by(id: params[:id]) || User.new
+      @user ||= User.new
     end
 
     private

@@ -6,7 +6,7 @@ module Users
     attribute :password, Types::Coercible::String
     attribute :password_confirmation, Types::Coercible::String
     attribute? :is_admin, Types::Nominal::Bool
-    attribute :first_name, Types::Coercible::String
-    attribute :last_name, Types::Coercible::String
+    attribute? :first_name, Types::Coercible::String
+    attribute? :last_name, Types::Coercible::String
   end
 end

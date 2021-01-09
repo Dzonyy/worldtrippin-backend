@@ -7,8 +7,14 @@ module Api
         @facade = Users::CreateFacade.new
       end
 
+      def show
+        find_user
+      end
+
       def edit
-        @facade = Users::CreateOrUpdateFacade.new(params: user_params)
+        find_user
+
+        @facade = Users::UpdateFacade.new(params: user_params)
       end
 
       def create
@@ -25,12 +31,12 @@ module Api
       end
 
       def update
-        @facade = Users::CreateOrUpdateFacade.new(params: user_params)
+        @facade = Users::UpdateFacade.new(params: user_params)
         result  = @facade.operation.call
 
         case result
         when Success
-          render json: { status: 402  }
+          render json: { status: 402 }
 
         when Failure
           render json: { status: 200 }
@@ -40,7 +46,7 @@ module Api
       private
 
       def user_params
-        params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name)
+        params.require(:user).permit(:id, :email, :password, :password_confirmation, :first_name, :last_name)
       end
 
       def find_user
