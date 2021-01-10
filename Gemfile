@@ -38,6 +38,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
+
   gem 'listen', '~> 3.2'
 end
 
