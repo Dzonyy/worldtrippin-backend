@@ -16,6 +16,9 @@ gem 'rack-cors'
 
 gem 'jwt', '~> 2.2', '>= 2.2.2'
 
+#Authorization
+gem 'cancancan'
+
 # Dry-rb
 gem 'dry-core'
 gem 'dry-initializer'
