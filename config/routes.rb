@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       resource :auth, only: %i[create]
 
-      resources :users
+      resources :users do
+        resources :trips
+      end
     end
   end
 end
