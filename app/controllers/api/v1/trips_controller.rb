@@ -6,6 +6,29 @@ module Api
       def new
         @facade = Trips::CreateFacade.new
       end
+
+      def create
+        @facade = Trips::CreateFacade.new(params: trip_params)
+        result  = @facade.operation.call
+
+        case result
+        when Success
+          render json: { status: 402 }
+
+        when Failure
+          render json: { status: 200 }
+        end
+      end
+
+      private
+
+      def trip_params
+        params.require(:trip).permit(:id, :email, :password, :password_confirmation, :first_name, :last_name)
+      end
+
+      def find_trip
+        Trip.find(params[:id])
+      end
     end
   end
 end
