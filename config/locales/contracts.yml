@@ -1,0 +1,8 @@
+pl:
+  contracts:
+    errors:
+      rules:
+        email:
+          invalid_format:
+            text: Nie prawidłowy format
+            code: :invalid_format

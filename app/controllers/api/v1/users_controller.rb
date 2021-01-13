@@ -26,7 +26,7 @@ module Api
           render json: { status: 402 }
 
         when Failure
-          render json: { status: 200 }
+          render json: { status: 200, errors: result.failure[:errors] }
         end
       end
 

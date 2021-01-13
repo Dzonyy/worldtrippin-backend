@@ -1,9 +1,11 @@
 module Users
   class CreateOperation < ApplicationOperation
     option :form
-    option :contract, default: -> { Users::CreateContract.new }
+    option :contract
 
     def call
+      yield check_errors
+
       user = yield create_user
 
       Success(user)
