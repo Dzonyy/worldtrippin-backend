@@ -3,6 +3,12 @@ module Api
     class TripsController < ApplicationController
       include Dry::Monads[:result]
 
+      def index
+        @trips = Trip.all
+
+        render json: @trips
+      end
+
       def new
         @facade = Trips::CreateFacade.new
       end

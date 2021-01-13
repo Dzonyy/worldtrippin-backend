@@ -1,7 +1,7 @@
 module Users
   class CreateOperation < ApplicationOperation
     option :form
-    option :contract, default: -> { Users::CreateOrUpdateContract.new }
+    option :contract, default: -> { Users::CreateContract.new }
 
     def call
       user = yield create_user
@@ -22,7 +22,7 @@ module Users
     end
 
     def user_params
-      @user_params ||= HashData::Users::CreateFactory.call(params: form_data)
+      @user_params ||= HashData::Users::CreateFactory.call(params: form)
     end
   end
 end
