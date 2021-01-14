@@ -42,7 +42,7 @@ module Api
       private
 
       def trip_params
-        params.require(:trip).permit(:id, :email, :password, :password_confirmation, :first_name, :last_name)
+        params.require(:trip).permit(:id, :title, :description, :start_at, :end_at, :user_id)
       end
 
       def find_trip

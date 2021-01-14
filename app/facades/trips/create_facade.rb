@@ -6,7 +6,7 @@ module Trips
 
     def operation
       @operation ||= Trips::CreateOperation.new(
-        user: user,
+        trip: trip,
         form: form,
         contract: contract
       )

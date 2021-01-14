@@ -4,8 +4,8 @@ module Trips
 
     attribute :user_id, Types::Coercible::String
 
-    attribute :start_time, Types::Time.optional
-    attribute :end_time, Types::Time.optional
+    attribute :start_at, Types::Coercible::String
+    attribute :end_at, Types::Coercible::String
 
     attribute :title, Types::Coercible::String
     attribute :description, Types::Coercible::String

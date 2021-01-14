@@ -1,10 +1,12 @@
 module Trips
   class CreateOperation < ApplicationOperation
     option :form
-    option :contract, default: -> { Trips::CreateOrUpdateContract.new }
+    option :contract
 
     def call
-      user = yield create_user
+      yield check_errors
+
+      user = yield create_trip
 
       Success(user)
     end
@@ -17,6 +19,7 @@ module Trips
       if trip.save
         Success(trip)
       else
+        binding.pry
         Failure(trip: trip)
       end
     end
