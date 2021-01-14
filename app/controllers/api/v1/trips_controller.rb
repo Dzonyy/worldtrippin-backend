@@ -22,7 +22,20 @@ module Api
           render json: { status: 402 }
 
         when Failure
-          render json: { status: 200 }
+          render json: { status: 200, errors: result.failure[:errors] }
+        end
+      end
+
+      def update
+        @facade = Trips::UpdateFacade.new(params: trip_params)
+        result  = @facade.operation.call
+
+        case result
+        when Success
+          render json: { status: 402 }
+
+        when Failure
+          render json: { status: 200, errors: result.failure[:errors] }
         end
       end
 
