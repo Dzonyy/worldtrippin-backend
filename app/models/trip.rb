@@ -5,6 +5,9 @@
 #  id          :bigint           not null, primary key
 #  description :text
 #  end_at      :datetime
+#  lat         :decimal(, )
+#  lng         :decimal(, )
+#  location    :string
 #  start_at    :datetime
 #  title       :string
 #  created_at  :datetime         not null
