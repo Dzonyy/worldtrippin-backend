@@ -2,6 +2,7 @@ module Trips
   class CreateOperation < ApplicationOperation
     option :form
     option :contract
+    option :user
 
     def call
       yield check_errors
@@ -19,7 +20,6 @@ module Trips
       if trip.save
         Success(trip)
       else
-        binding.pry
         Failure(trip: trip)
       end
     end

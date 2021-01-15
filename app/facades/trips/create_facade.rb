@@ -6,6 +6,7 @@ module Trips
 
     def operation
       @operation ||= Trips::CreateOperation.new(
+        user: user,
         trip: trip,
         form: form,
         contract: contract
@@ -22,6 +23,10 @@ module Trips
 
     def trip
       @trip ||= Trip.new
+    end
+
+    def user
+      @user ||= User.find(params[:user_id])
     end
 
     private

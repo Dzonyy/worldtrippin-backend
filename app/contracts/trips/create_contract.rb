@@ -6,6 +6,9 @@ module Trips
       required(:end_at).filled(:string)
       required(:title).filled(:string)
       required(:description).filled(:string)
+      required(:location).filled(:string)
+      required(:lat).filled(:string)
+      required(:lng).filled(:string)
     end
   end
 end

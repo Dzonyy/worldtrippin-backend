@@ -9,5 +9,9 @@ module Trips
 
     attribute :title, Types::Coercible::String
     attribute :description, Types::Coercible::String
+
+    attribute :location, Types::Coercible::String
+    attribute :lng, Types::Coercible::Decimal
+    attribute :lat, Types::Coercible::Decimal
   end
 end
