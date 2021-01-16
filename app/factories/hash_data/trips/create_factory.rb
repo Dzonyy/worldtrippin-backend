@@ -11,7 +11,10 @@ module HashData
           start_at: params[:start_at],
           end_at: params[:end_at],
           title: params[:title],
-          description: params[:description]
+          description: params[:description],
+          location: params[:location],
+          lng: params[:lng],
+          lat: params[:lat]
         }
       end
     end
