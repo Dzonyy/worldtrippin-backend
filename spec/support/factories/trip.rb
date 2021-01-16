@@ -29,5 +29,8 @@ FactoryBot.define do
     start_at { "2021-01-10 12:18:47" }
     end_at { "2021-01-10 12:18:47" }
     user { nil }
+    location { 'Jana Kantego Federowicza 7' }
+    lat { '50,12' }
+    lng { '19,34' }
   end
 end
