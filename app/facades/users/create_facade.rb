@@ -6,7 +6,6 @@ module Users
 
     def operation
       @operation ||= Users::CreateOperation.new(
-        user: user,
         form: form,
         contract: contract
       )
