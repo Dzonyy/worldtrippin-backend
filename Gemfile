@@ -30,10 +30,13 @@ gem 'dry-validation'
 # Make classes callable
 gem 'callee'
 
+# Fake data
+gem 'ffaker'
+gem 'factory_bot'
+gem 'factory_bot_rails'
+
 group :development, :test do
   gem 'database_cleaner'
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'

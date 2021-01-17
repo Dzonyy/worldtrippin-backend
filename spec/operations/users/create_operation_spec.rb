@@ -12,7 +12,7 @@ RSpec.describe Users::CreateOperation do
       }
     end
 
-    subject { described_class.call(user: user) }
+    subject { described_class.call(form: params) }
 
     it { expect { subject }.to change { User.count }.by(1) }
   end

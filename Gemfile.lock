@@ -124,8 +124,7 @@ GEM
     factory_bot_rails (6.1.0)
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
-    faker (2.15.1)
-      i18n (>= 1.6, < 2)
+    ffaker (2.17.0)
     ffi (1.14.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -275,8 +274,9 @@ DEPENDENCIES
   dry-struct
   dry-types
   dry-validation
+  factory_bot
   factory_bot_rails
-  faker
+  ffaker
   jwt (~> 2.2, >= 2.2.2)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
