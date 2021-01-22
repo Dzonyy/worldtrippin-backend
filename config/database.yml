@@ -12,7 +12,7 @@ development: &development
 
 test:
   <<: *development
-  database: worldtrippin-backend_development
+  database: worldtrippin-backend_test
 
 production:
   url: <%= ENV['DATABASE_URL'] %>
